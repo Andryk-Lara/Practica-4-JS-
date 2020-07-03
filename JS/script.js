@@ -1,14 +1,15 @@
-let numeros = [];
-let cero = 0;
+const numeros = [];
 let promedio = 0;
-let numero = parseFloat(prompt("Digite un numero"));
+let numero = prompt("Digite un numero");
 
 //Promedio
 
-while (numero != cero) { //No guarda el primer numero, buscar solucion. Buscar la forma del string vacio.
-    numero = parseFloat(prompt('Digite un numero'));
-    numeros.push(numero);   
-    
+while (numero != '') { //No guarda el primer numero, buscar solucion. Buscar la forma del string vacio.
+    numero = parseFloat(numero);
+    if (!isNaN(numero)){
+        numeros.push(numero); 
+    }                
+    numero = prompt('Digite un numero');
 }
 numeros.sort((a, b) => a - b);
 
